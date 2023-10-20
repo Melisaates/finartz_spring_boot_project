@@ -9,17 +9,28 @@ public class PushNotificationRequest {
     private String topic;
     private String token;
 
+    private long senderId;
+
     public PushNotificationRequest(){
         super();
     }
 
 
-    public PushNotificationRequest(String title, String message, String topic, String token) {
+    public long getSenderId() {
+        return senderId;
+    }
+
+    public void setSenderId(long senderId) {
+        this.senderId = senderId;
+    }
+
+    public PushNotificationRequest(String title, String message, String topic, String token, long senderId) {
         super();
         this.title = title;
         this.message = message;
         this.topic = topic;
         this.token = token;
+        this.senderId=senderId;
     }
 
 

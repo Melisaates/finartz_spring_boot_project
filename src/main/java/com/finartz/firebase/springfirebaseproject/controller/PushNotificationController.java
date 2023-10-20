@@ -26,7 +26,7 @@ public class PushNotificationController {
         System.out.println(":::::::::::::::::::"+request);
         pushNotificationService.sendPushNotificationToToken(request);
 
-        System.out.println("princr");
+        System.out.println("print");
         return new ResponseEntity<>(new PushNotificationResponse(HttpStatus.OK.value(), "Notification has been sent."), HttpStatus.OK);
     }
     
