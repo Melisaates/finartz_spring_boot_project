@@ -22,6 +22,7 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+<<<<<<< HEAD
 		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -40,6 +41,8 @@
 
 
 
+=======
+>>>>>>> origin/main
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -49,6 +52,7 @@
 		<dependency>
 			<groupId>com.google.firebase</groupId>
 			<artifactId>firebase-admin</artifactId>
+<<<<<<< HEAD
 			<version>9.2.0</version>
 		</dependency>
 
@@ -89,6 +93,19 @@
 
 			</plugin>
 
+=======
+			<version>7.1.0</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+>>>>>>> origin/main
 		</plugins>
 	</build>
 
