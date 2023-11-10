@@ -1,8 +1,8 @@
 package com.finartz.firebase.springfirebaseproject.service;
 
-import com.finartz.firebase.springfirebaseproject.entity.UserRecordDTO;
-import com.google.firebase.FirebaseException;
+import com.finartz.firebase.springfirebaseproject.entity.CreateUserRequest;
+import com.google.firebase.auth.FirebaseAuthException;
 
 public interface IAuthService {
-    UserRecordDTO createUser(UserRecordDTO userRecordDTO) throws FirebaseException;
+    CreateUserRequest createUser(CreateUserRequest createUserRequest) throws Exception;
 }

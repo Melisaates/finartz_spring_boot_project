@@ -1,12 +1,10 @@
 package com.finartz.firebase.springfirebaseproject.service;
-
 import com.finartz.firebase.springfirebaseproject.entity.PushNotificationRequest;
 import org.slf4j.*;
 import org.springframework.stereotype.Service;
 
-
 @Service
-public class PushNotificationService {
+public class PushNotificationService implements IPushNotificationService{
 
     private Logger logger = (Logger) LoggerFactory.getLogger(PushNotificationService.class);
 

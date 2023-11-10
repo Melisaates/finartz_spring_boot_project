@@ -1,57 +1,64 @@
 package com.finartz.firebase.springfirebaseproject.entity;
 
 public class User {
-    private String user_name;
+    private String userName;
     private String email;
-
     private String password;
-    private String user_interests;
+    private String userInterests;
     private String phoneNumber;
 
-    public User(String user_name, String email, String password, String user_interests, String phoneNumber) {
-        this.user_name = user_name;
+    public User(String user_name, String email, String password, String userInterests, String phoneNumber) {
+        this.userName = user_name;
         this.email = email;
         this.password = password;
-        this.user_interests = user_interests;
+        this.userInterests = userInterests;
         this.phoneNumber = phoneNumber;
     }
+
+
 
     public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhoneNumber(CreateUserRequest createUserRequest) {
+
+        this.phoneNumber = createUserRequest.getPhoneNumber();
     }
 
     public String getPassword() {
+
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPassword(CreateUserRequest createUserRequest) throws Exception {
+
+        this.password = createUserRequest.getPassword();
     }
-    public String getUser_name() {
-        return user_name;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+
+    public void setUserName(CreateUserRequest createUserRequest) {
+
+        this.userName = createUserRequest.getUserName();
     }
 
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail(CreateUserRequest createUserRequest) {
+
+        this.email = createUserRequest.getUserName();
     }
 
-    public String getUser_interests() {
-        return user_interests;
+    public String getUserInterests() {
+        return userInterests;
     }
 
-    public void setUser_interests(String user_interests) {
-        this.user_interests = user_interests;
+    public void setUserInterests(String userInterests) {
+        this.userInterests = userInterests;
     }
 }
