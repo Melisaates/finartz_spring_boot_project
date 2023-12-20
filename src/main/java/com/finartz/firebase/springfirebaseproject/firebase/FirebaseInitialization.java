@@ -16,7 +16,7 @@ public class FirebaseInitialization {
         FileInputStream serviceAccount =
                 null;
         try {
-            serviceAccount = new FileInputStream("src/main/resources/serviceAccountKey.json");
+            serviceAccount = new FileInputStream("/home/melisa/IdeaProjects/spring-firebase-project/src/main/resources/serviceAccountKey.json");
 
 
         FirebaseOptions options = new FirebaseOptions.Builder()

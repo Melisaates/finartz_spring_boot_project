@@ -1,7 +1,7 @@
 package com.finartz.firebase.springfirebaseproject.service;
 
-import com.finartz.firebase.springfirebaseproject.entity.LogInRequest;
-import com.finartz.firebase.springfirebaseproject.entity.LogInResponse;
+import com.finartz.firebase.springfirebaseproject.requests.LogInRequest;
+import com.finartz.firebase.springfirebaseproject.responses.LogInResponse;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
 import com.google.gson.JsonObject;

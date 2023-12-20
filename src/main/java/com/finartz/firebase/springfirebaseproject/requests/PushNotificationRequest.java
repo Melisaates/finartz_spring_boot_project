@@ -1,6 +1,4 @@
-package com.finartz.firebase.springfirebaseproject.entity;
-import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.iid.*;
+package com.finartz.firebase.springfirebaseproject.requests;
 
 
 public class PushNotificationRequest {
@@ -8,9 +6,7 @@ public class PushNotificationRequest {
     private String message;
     private String topic;
     private String token;
-
     private long senderId;
-
     public PushNotificationRequest(){
         super();
     }

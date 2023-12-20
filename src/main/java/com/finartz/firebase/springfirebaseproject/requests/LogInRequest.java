@@ -1,4 +1,4 @@
-package com.finartz.firebase.springfirebaseproject.entity;
+package com.finartz.firebase.springfirebaseproject.requests;
 
 public class LogInRequest {
     private String email;

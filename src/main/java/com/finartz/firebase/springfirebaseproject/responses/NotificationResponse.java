@@ -1,14 +1,14 @@
-package com.finartz.firebase.springfirebaseproject.entity;
+package com.finartz.firebase.springfirebaseproject.responses;
 
-public class PushNotificationResponse {
+public class NotificationResponse extends BaseResponse{
     private int status;
     private String message;
 
-    public PushNotificationResponse() {
+    public NotificationResponse() {
 
     }
 
-    public PushNotificationResponse(int status, String message) {
+    public NotificationResponse(int status, String message) {
         this.status = status;
         this.message = message;
     }

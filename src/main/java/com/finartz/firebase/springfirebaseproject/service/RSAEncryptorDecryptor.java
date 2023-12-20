@@ -1,22 +1,20 @@
 package com.finartz.firebase.springfirebaseproject.service;
 
-import com.finartz.firebase.springfirebaseproject.entity.CreateUserRequest;
-import com.finartz.firebase.springfirebaseproject.entity.LogInRequest;
-import com.finartz.firebase.springfirebaseproject.entity.LogInResponse;
-import com.finartz.firebase.springfirebaseproject.entity.User;
-
 import java.security.*;
 import java.util.Base64;
 import javax.crypto.Cipher;
+
 
 public class RSAEncryptorDecryptor {
     public static KeyPair generateKeyPair() throws Exception {
         KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
         keyPairGenerator.initialize(2048);
-        System.out.println("pairrrrrrrrrrrrr:::::::"+ keyPairGenerator.generateKeyPair().getPrivate());
-        System.out.println("pairrrrrrrrrrrrr:::::::"+ keyPairGenerator.generateKeyPair().getPublic());
+        KeyPair keyPair = keyPairGenerator.generateKeyPair();
 
-        return keyPairGenerator.generateKeyPair();
+        System.out.println("pairrrrrrrrrrrrr:::::::"+ keyPair.getPrivate());
+        System.out.println("pairrrrrrrrrrrrr:::::::"+ keyPair.getPublic());
+
+        return keyPair;
     }
 
     public static String encrypt(String plaintext, PublicKey publicKey) throws Exception {
@@ -28,9 +26,12 @@ public class RSAEncryptorDecryptor {
 
     public static String decrypt(String encryptedText, PrivateKey privateKey) throws Exception {
         byte[] bytes = Base64.getDecoder().decode(encryptedText);
-        Cipher decryptCipher = Cipher.getInstance("RSA");
-        decryptCipher.init(Cipher.DECRYPT_MODE, privateKey);
-        return new String(decryptCipher.doFinal(bytes));
+        KeyPair keyPair=generateKeyPair();
+
+        Cipher cipher = Cipher.getInstance("RSA");
+        cipher.init(Cipher.DECRYPT_MODE, privateKey);
+        byte[] cipherbyte = cipher.doFinal(bytes);
+        return new String(cipherbyte);
     }
 
  /*   // LogInRequest şifreleme

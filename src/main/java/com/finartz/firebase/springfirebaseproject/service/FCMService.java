@@ -1,14 +1,13 @@
 package com.finartz.firebase.springfirebaseproject.service;
-import com.finartz.firebase.springfirebaseproject.entity.PushNotificationRequest;
 import java.time.Duration;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
+import com.finartz.firebase.springfirebaseproject.requests.PushNotificationRequest;
 import com.google.firebase.messaging.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import com.google.firebase.messaging.Notification.Builder;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 //FCM ile bildirim gönderme işlemlerini gerçekleştirmek için kullanılır.
@@ -88,3 +87,5 @@ public class FCMService {
     }
 
 }
+
+

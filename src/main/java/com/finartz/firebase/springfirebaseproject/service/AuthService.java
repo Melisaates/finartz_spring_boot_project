@@ -1,8 +1,7 @@
 package com.finartz.firebase.springfirebaseproject.service;
 
-import com.finartz.firebase.springfirebaseproject.entity.CreateUserRequest;
+import com.finartz.firebase.springfirebaseproject.requests.CreateUserRequest;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.UserRecord;
 import org.springframework.stereotype.Service;
 

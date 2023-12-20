@@ -1,8 +1,7 @@
 package com.finartz.firebase.springfirebaseproject.service;
 
-import com.finartz.firebase.springfirebaseproject.entity.LogInRequest;
-import com.finartz.firebase.springfirebaseproject.entity.LogInResponse;
-import org.springframework.stereotype.Service;
+import com.finartz.firebase.springfirebaseproject.requests.LogInRequest;
+import com.finartz.firebase.springfirebaseproject.responses.LogInResponse;
 
 
 public interface ILogIn {

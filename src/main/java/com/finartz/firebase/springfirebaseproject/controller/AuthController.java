@@ -1,21 +1,18 @@
 package com.finartz.firebase.springfirebaseproject.controller;
-import com.finartz.firebase.springfirebaseproject.entity.*;
+import com.finartz.firebase.springfirebaseproject.requests.CreateUserRequest;
+import com.finartz.firebase.springfirebaseproject.requests.LogInRequest;
+import com.finartz.firebase.springfirebaseproject.responses.LogInResponse;
 import com.finartz.firebase.springfirebaseproject.service.*;
-import com.google.firebase.auth.FirebaseAuthException;
-import org.springframework.http.HttpStatus;
 import com.finartz.firebase.springfirebaseproject.service.ILogIn;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/")
 public class AuthController {
 
-
     private IAuthService authService;
     private ILogIn logIn;
+
 
     public AuthController( IAuthService authService, ILogIn logIn) {
         this.authService = authService;
@@ -29,18 +26,9 @@ public class AuthController {
     }
 
 
-    @PostMapping("/user")
+    @PostMapping("/create")
     public CreateUserRequest createUser(@RequestBody CreateUserRequest createUserRequest) throws Exception {
         return authService.createUser(createUserRequest);
     }
-
-/*
-    @GetMapping("/users/{id}")
-    public List listUsers()
-*/
-
-
-
-
 
 }
