@@ -1,17 +1,17 @@
 package com.finartz.firebase.springfirebaseproject.models;
 
 import com.finartz.firebase.springfirebaseproject.requests.CreateUserRequest;
-import com.finartz.firebase.springfirebaseproject.service.RSAEncryptorDecryptor;
+import com.finartz.firebase.springfirebaseproject.service.impl.RSAEncryptorDecryptor;
 import lombok.Builder;
 
 import java.security.KeyPair;
 import java.util.UUID;
 
-import static com.finartz.firebase.springfirebaseproject.service.RSAEncryptorDecryptor.generateKeyPair;
+import static com.finartz.firebase.springfirebaseproject.service.impl.RSAEncryptorDecryptor.generateKeyPair;
 
 @Builder
-public class UserDTO {
-    private UUID userId;
+public class UserDto {
+    private int userId;
     private String userName;
     private String email;
     private String password;
@@ -19,7 +19,7 @@ public class UserDTO {
     private String phoneNumber;
     private KeyPair keyPair;
 
-    public UserDTO(UUID userId, String userName, String email, String password, String userInterests, String phoneNumber, KeyPair keyPair) {
+    public UserDto(int userId, String userName, String email, String password, String userInterests, String phoneNumber, KeyPair keyPair) {
         try {
             this.keyPair = generateKeyPair();
             System.out.println("oluştu keypair : " + this.keyPair);
@@ -36,11 +36,11 @@ public class UserDTO {
         this.keyPair = keyPair;
     }
 
-    public UUID getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(UUID userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 
@@ -81,9 +81,10 @@ public class UserDTO {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        UserDTO userDTO = (UserDTO) o;
+        UserDto userDTO = (UserDto) o;
 
-        return userId.equals(userDTO.userId);
+        return userId == userDTO.userId;
+
     }
 
 
@@ -117,7 +118,7 @@ public class UserDTO {
         try {
 
             // Şifreleme
-            String encryptedPassword = RSAEncryptorDecryptor.encrypt(createUserRequest.getPassword(), keyPair.getPublic());
+        String encryptedPassword = RSAEncryptorDecryptor.encrypt(createUserRequest.getPassword(), keyPair.getPublic());
             System.out.println("Encrypted Password: " + encryptedPassword);
 
             this.password=encryptedPassword;
@@ -128,6 +129,6 @@ public class UserDTO {
             e.printStackTrace();
         }
 
-
-    }}
+    }
+}
 

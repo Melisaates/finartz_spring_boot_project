@@ -1,4 +1,4 @@
-package com.finartz.firebase.springfirebaseproject.service;
+package com.finartz.firebase.springfirebaseproject.service.impl;
 import java.io.IOException;
 import javax.annotation.PostConstruct;
 import org.slf4j.Logger;

@@ -1,31 +1,54 @@
 package com.finartz.firebase.springfirebaseproject.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.finartz.firebase.springfirebaseproject.requests.CreateUserRequest;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
-
-import java.util.UUID;
+import lombok.NoArgsConstructor;
 
 
+@Entity
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name="users")
 public class User {
 
-    private UUID id;
+    @Id
+    @Column(name="id")
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private int id;
+
+    @Column(name = "user_name")
     private String userName;
+
+    @Column(name="email")
     private String email;
+    @Column(name="password")
     private String password;
+
+    @JsonIgnore
+
+    @Column(name="user_interests")
     private String userInterests;
+
+    @JsonIgnore
+    @Column(name="phone_number")
     private String phoneNumber;
 
 
 
-    public User(UUID id, String user_name, String email, String password, String userInterests, String phoneNumber) {
-        this.userName = user_name;
+    public User(String userName, String email, String password, String userInterests, String phoneNumber) {
+        super();
+        this.userName = userName;
         this.email = email;
         this.password = password;
         this.userInterests = userInterests;
         this.phoneNumber = phoneNumber;
     }
+
+
 
     public void setUserName(String userName) {
         this.userName = userName;
@@ -43,11 +66,11 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
-    public UUID getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(int id) {
         this.id = id;
     }
 

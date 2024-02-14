@@ -9,7 +9,7 @@ import java.util.UUID;
 @Setter
 @Getter
 @Builder
-public class NotificationDTO {
+public class NotificationDto {
     private UUID notificationID;
     private String topic;
     private String title;

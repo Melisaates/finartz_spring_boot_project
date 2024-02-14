@@ -1,4 +1,4 @@
-package com.finartz.firebase.springfirebaseproject.service;
+package com.finartz.firebase.springfirebaseproject.service.inf;
 
 import com.finartz.firebase.springfirebaseproject.requests.PushNotificationRequest;
 

@@ -1,6 +1,6 @@
 package com.finartz.firebase.springfirebaseproject.responses;
 
-import com.finartz.firebase.springfirebaseproject.models.AuthenticatedUserDTO;
+import com.finartz.firebase.springfirebaseproject.models.AuthenticatedUserDto;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,7 +8,7 @@ import java.util.UUID;
 
 @Getter
 @Setter
-public class LogInResponse extends BaseResponse {
+public class LogInResponse {
     private UUID id;
     private String userName;
     private String email;
@@ -18,7 +18,7 @@ public class LogInResponse extends BaseResponse {
     private String password;
     private String token;
 
-    public LogInResponse(AuthenticatedUserDTO authResponseDTO) {
+    public LogInResponse(AuthenticatedUserDto authResponseDTO) {
         this.id = authResponseDTO.getId();
         this.userName = authResponseDTO.getUserName();
         this.userInterests = authResponseDTO.getUserInterests();

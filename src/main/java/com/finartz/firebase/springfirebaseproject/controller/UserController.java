@@ -1,24 +1,24 @@
 package com.finartz.firebase.springfirebaseproject.controller;
-import com.finartz.firebase.springfirebaseproject.entity.User;
-import com.finartz.firebase.springfirebaseproject.models.UserDTO;
+import com.finartz.firebase.springfirebaseproject.models.UserDto;
 import com.finartz.firebase.springfirebaseproject.requests.CreateUserRequest;
 import com.finartz.firebase.springfirebaseproject.responses.UserResponse;
-import com.finartz.firebase.springfirebaseproject.service.IUserService;
+import com.finartz.firebase.springfirebaseproject.service.inf.IUserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 
+@RestController
+@RequestMapping("/api")
 public class UserController {
 
     private IUserService userService;
 
     @GetMapping("/users")
-    public ResponseEntity<List<UserDTO>> listUsers(){
-        List<UserDTO> listUsers= userService.listUsers();
+    public ResponseEntity<List<UserDto>> listUsers(){
+        List<UserDto> listUsers= userService.listUsers();
         return new ResponseEntity<>(listUsers, HttpStatus.OK);
 
     }
@@ -31,7 +31,7 @@ public class UserController {
 
     @PutMapping("/update/{id}")
     public ResponseEntity<UserResponse> updateUser(@PathVariable UUID id,@RequestBody CreateUserRequest updatedUser) {
-        UserDTO updatedUserInfo = userService.updateUser(id,updatedUser);
+        UserDto updatedUserInfo = userService.updateUser(id,updatedUser);
         UserResponse userResponse=new UserResponse(updatedUserInfo);
         if (updatedUserInfo != null) {
             return ResponseEntity.ok(userResponse);

@@ -1,8 +1,7 @@
 package com.finartz.firebase.springfirebaseproject.responses;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.finartz.firebase.springfirebaseproject.models.UserDTO;
-import com.finartz.firebase.springfirebaseproject.responses.BaseResponse;
+import com.finartz.firebase.springfirebaseproject.models.UserDto;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,8 +11,8 @@ import java.util.UUID;
 @Getter
 @Setter
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class UserResponse extends BaseResponse {
-    private UUID userId;
+public class UserResponse {
+    private int userId;
     private String userName;
     private String phoneNumber;
     private String email;
@@ -21,7 +20,7 @@ public class UserResponse extends BaseResponse {
 
 
 
-    public UserResponse(UserDTO userDTO){
+    public UserResponse(UserDto userDTO){
         this.userId = userDTO.getUserId();
         this.userName = userDTO.getName();
         this.phoneNumber = userDTO.getPhoneNumber();

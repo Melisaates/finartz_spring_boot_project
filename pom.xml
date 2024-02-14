@@ -15,12 +15,21 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
+		<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLInnoDBDialect"/>
+
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.33</version>
+		</dependency>
+
 
 
 		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
@@ -29,6 +38,13 @@
 			<artifactId>lombok</artifactId>
 			<version>${lombok.version}</version>
 			<scope>provided</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.google.firebase/firebase-auth -->
+		<dependency>
+			<groupId>com.google.firebase</groupId>
+			<artifactId>firebase-auth</artifactId>
+			<version>22.3.1</version>
 		</dependency>
 
 
@@ -45,12 +61,6 @@
 			<version>9.2.0</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/com.google.firebase/firebase-auth -->
-		<dependency>
-			<groupId>com.google.firebase</groupId>
-			<artifactId>firebase-auth</artifactId>
-			<version>22.2.0</version>
-		</dependency>
 
 
 		<!-- https://mvnrepository.com/artifact/org.javassist/javassist -->
@@ -62,6 +72,51 @@
 
 
 
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
+		<dependency>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
+			<version>8.2.0</version>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>6.4.3.Final</version>
+			<type>pom</type>
+		</dependency>
+
+	<!-- https://mvnrepository.com/artifact/rome/rome -->
+		<dependency>
+			<groupId>rome</groupId>
+			<artifactId>rome</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.rometools/rome -->
+		<dependency>
+			<groupId>com.rometools</groupId>
+			<artifactId>rome</artifactId>
+			<version>2.1.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.rometools/rome-fetcher -->
+		<dependency>
+			<groupId>com.rometools</groupId>
+			<artifactId>rome-fetcher</artifactId>
+			<version>1.19.0</version>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>
@@ -69,10 +124,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>         <plugin>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-maven-plugin</artifactId>
-		</plugin>
+			</plugin>
 
 		</plugins>
 	</build>

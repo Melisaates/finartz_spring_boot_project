@@ -1,29 +1,29 @@
 package com.finartz.firebase.springfirebaseproject.repository;
 
 import com.finartz.firebase.springfirebaseproject.entity.User;
-import com.finartz.firebase.springfirebaseproject.models.UserDTO;
 import com.google.api.core.ApiFuture;
-import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.firestore.*;
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.FirebaseOptions;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.cloud.FirestoreClient;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 import java.util.concurrent.ExecutionException;
-@Component
 
-public class UserRepo {
+@Repository
+public interface UserRepo extends JpaRepository<User, UUID> {
+User findByUserName(String name);
 
-
+}
+/*
+    @Autowired
+    
     private final CollectionReference usersCollection;
     private final Firestore firestore;
 
@@ -81,7 +81,9 @@ public class UserRepo {
 
 
     public void delete(User user) {
-        usersCollection.document(user.getId().toString()).delete();
+
+            usersCollection.document(String.valueOf(user.getId())).delete();
+
     }
 
     public User findByName(String name) {
@@ -106,7 +108,8 @@ public class UserRepo {
         } catch (ExecutionException e) {
             throw new RuntimeException(e);
         }
-        user.setId(java.util.UUID.fromString(documentReference.getId()));
+        //user.setId(java.util.UUID.fromString(documentReference.getId()));
+        user.setId(Integer.valueOf(documentReference.getId()));
         return user;
     }
-}
+}*/

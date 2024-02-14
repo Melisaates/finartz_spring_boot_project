@@ -1,24 +1,20 @@
-package com.finartz.firebase.springfirebaseproject.mappers;
+package com.finartz.firebase.springfirebaseproject.mappers.impl;
 
 import com.finartz.firebase.springfirebaseproject.entity.User;
-import com.finartz.firebase.springfirebaseproject.models.UserDTO;
+import com.finartz.firebase.springfirebaseproject.mappers.inf.IUserMapper;
+import com.finartz.firebase.springfirebaseproject.models.UserDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
 
 @RequiredArgsConstructor
 @Component
 public class UserMapper implements IUserMapper {
     @Override
-    public UserDTO toUserDTO(User user) {
+    public UserDto toUserDTO(User user) {
         if (user == null)
             return null;
 
-        UserDTO userDTO = UserDTO.builder()
+        UserDto userDTO = UserDto.builder()
                 .userId(user.getId())
                 .userName(user.getUserName())
                 .userInterests(user.getUserInterests())
@@ -31,7 +27,7 @@ public class UserMapper implements IUserMapper {
     }
 
     @Override
-    public User toUserEntity(UserDTO userDTO) {
+    public User toUserEntity(UserDto userDTO) {
         if (userDTO == null)
             return null;
         

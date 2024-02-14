@@ -1,4 +1,4 @@
-package com.finartz.firebase.springfirebaseproject.service;
+package com.finartz.firebase.springfirebaseproject.service.impl;
 import java.time.Duration;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
@@ -16,7 +16,7 @@ public class FCMService {
     private Logger logger = LoggerFactory.getLogger(FCMService.class);
 
 
-    public void sendMessageToToken(PushNotificationRequest request)
+    public void UserRecordsendMessageToToken(PushNotificationRequest request)
             throws InterruptedException, ExecutionException {
 
 
@@ -86,6 +86,8 @@ public class FCMService {
 
     }
 
+    public void sendMessageToToken(PushNotificationRequest request) {
+    }
 }
 
 

@@ -1,6 +1,6 @@
 package com.finartz.firebase.springfirebaseproject.responses;
 
-public class NotificationResponse extends BaseResponse{
+public class NotificationResponse {
     private int status;
     private String message;
 
@@ -16,6 +16,7 @@ public class NotificationResponse extends BaseResponse{
     public int getStatus() {
         return status;
     }
+
 
     public void setStatus(int status) {
         this.status = status;
