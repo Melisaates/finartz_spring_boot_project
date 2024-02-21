@@ -9,7 +9,6 @@ import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.context.support.ResourceBundleMessageSource;
 
 import java.util.List;
-import java.util.UUID;
 import java.util.stream.Collectors;
 
 
@@ -43,8 +42,15 @@ public class UserDao implements IUserDao {
         return userMapper.toUserDTO(userRepo.findByUserName(name));
 
     }
+    public UserDto getByEmail(String email) {
 
-    public UserDto getById(UUID id) {
+        return userMapper.toUserDTO(userRepo.findByEmail(email));
+
+    }
+
+
+
+    public UserDto getById(int id) {
         //return optional
         return userMapper.toUserDTO(userRepo.findById(id)
                 .orElseThrow(() -> new NullPointerException(

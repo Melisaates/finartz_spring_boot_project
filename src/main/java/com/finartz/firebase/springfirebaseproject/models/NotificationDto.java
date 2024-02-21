@@ -4,13 +4,12 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.UUID;
 
 @Setter
 @Getter
 @Builder
 public class NotificationDto {
-    private UUID notificationID;
+    private int notificationID;
     private String topic;
     private String title;
     private String text;

@@ -20,7 +20,7 @@ public class UserMapper implements IUserMapper {
                 .userInterests(user.getUserInterests())
                 .phoneNumber(user.getPhoneNumber())
                 .email(user.getEmail())
-                .password(user.getPassword())
+                .password(user.getEncryptedPassword())
                 .build();
 
         return userDTO;
@@ -36,7 +36,7 @@ public class UserMapper implements IUserMapper {
                 .userName(userDTO.getName())
                 .phoneNumber(userDTO.getPhoneNumber())
                 .email(userDTO.getEmail())
-                .password(userDTO.getPassword())
+                .encryptedPassword(userDTO.getPassword())
                 .userInterests(userDTO.getUserInterests())
                 .build();
 

@@ -7,7 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-import java.util.UUID;
 
 
 @RestController
@@ -24,13 +23,13 @@ public class UserController {
     }
 
     @GetMapping("/users/{id}")
-    public ResponseEntity<UserResponse> getUserById (@PathVariable UUID id){
+    public ResponseEntity<UserResponse> getUserById (@PathVariable int id){
         UserResponse userResponse =new UserResponse(userService.getUserById(id)) ;
         return new ResponseEntity<>(userResponse,HttpStatus.OK);
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<UserResponse> updateUser(@PathVariable UUID id,@RequestBody CreateUserRequest updatedUser) {
+    public ResponseEntity<UserResponse> updateUser(@PathVariable int id,@RequestBody CreateUserRequest updatedUser) {
         UserDto updatedUserInfo = userService.updateUser(id,updatedUser);
         UserResponse userResponse=new UserResponse(updatedUserInfo);
         if (updatedUserInfo != null) {
@@ -42,7 +41,7 @@ public class UserController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<UserResponse> deleteUser(@PathVariable UUID id) {
+    public ResponseEntity<UserResponse> deleteUser(@PathVariable int id) {
         return new ResponseEntity<>(new UserResponse(userService.deleteUser(id)), HttpStatus.CREATED);
 
     }

@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.UUID;
 
 @Service
 public class UserService implements IUserService {
@@ -42,7 +41,7 @@ public class UserService implements IUserService {
 
     @Override
     @Transactional
-    public UserDto getUserById(UUID userId) {
+    public UserDto getUserById(int userId) {
         /*return userList.stream()
                 .filter(user -> user.getId() == id)
                 .findFirst();*/
@@ -51,7 +50,7 @@ public class UserService implements IUserService {
 
     @Override
     @Transactional
-    public UserDto deleteUser(UUID userId) {
+    public UserDto deleteUser(int userId) {
        UserDto user = getUserById(userId);
        return userDao.delete(user);
     }
@@ -59,7 +58,7 @@ public class UserService implements IUserService {
 
     @Override
     @Transactional
-    public UserDto updateUser(UUID userId, CreateUserRequest userRequest) {
+    public UserDto updateUser(int userId, CreateUserRequest userRequest) {
         UserDto user = getUserById(userId);
         if (userRequest.getUserName() != null && !userRequest.getUserName().equals(""))
             user.setUserName(userRequest.getUserName());

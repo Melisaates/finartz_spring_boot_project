@@ -4,12 +4,11 @@ import com.finartz.firebase.springfirebaseproject.entity.User;
 import com.finartz.firebase.springfirebaseproject.models.UserDto;
 
 import java.util.List;
-import java.util.UUID;
 
 public interface IUserDao {
     public List<UserDto> getAll();
 
-    public UserDto getById(UUID id);
+    public UserDto getById(int id);
 
     public UserDto delete(UserDto user);
 

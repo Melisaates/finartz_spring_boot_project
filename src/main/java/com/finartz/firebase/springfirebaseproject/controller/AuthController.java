@@ -24,7 +24,7 @@ public class AuthController {
 
 
     @PostMapping("/logIn")
-    public ResponseEntity<LogInResponse>  authenticateUser (@RequestBody LogInRequest logInRequest){
+    public ResponseEntity<LogInResponse>  authenticateUser (@RequestBody LogInRequest logInRequest) throws Exception {
         LogInResponse response = authService.authenticateUser(logInRequest);
 
         if (response.getToken() != null) {

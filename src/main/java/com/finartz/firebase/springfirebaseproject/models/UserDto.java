@@ -5,7 +5,6 @@ import com.finartz.firebase.springfirebaseproject.service.impl.RSAEncryptorDecry
 import lombok.Builder;
 
 import java.security.KeyPair;
-import java.util.UUID;
 
 import static com.finartz.firebase.springfirebaseproject.service.impl.RSAEncryptorDecryptor.generateKeyPair;
 

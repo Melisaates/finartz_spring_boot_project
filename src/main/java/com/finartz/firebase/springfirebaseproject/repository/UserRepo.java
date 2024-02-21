@@ -13,12 +13,13 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 
 @Repository
-public interface UserRepo extends JpaRepository<User, UUID> {
+public interface UserRepo extends JpaRepository<User, Integer> {
 User findByUserName(String name);
+
+User findByEmail(String email);
 
 }
 /*
@@ -66,7 +67,7 @@ User findByUserName(String name);
         return userList;
     }
 
-    public Optional<User> findById(java.util.UUID id) {
+    public Optional<User> findById(java.util.int id) {
         try {
             DocumentSnapshot document = usersCollection.document(id.toString()).get().get();
 
@@ -108,7 +109,7 @@ User findByUserName(String name);
         } catch (ExecutionException e) {
             throw new RuntimeException(e);
         }
-        //user.setId(java.util.UUID.fromString(documentReference.getId()));
+        //user.setId(java.util.int.fromString(documentReference.getId()));
         user.setId(Integer.valueOf(documentReference.getId()));
         return user;
     }

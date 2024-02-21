@@ -5,7 +5,6 @@ import com.finartz.firebase.springfirebaseproject.models.UserDto;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.UUID;
 
 
 @Getter

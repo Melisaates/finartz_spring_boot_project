@@ -1,25 +1,27 @@
 package com.finartz.firebase.springfirebaseproject.models;
 
-import java.util.UUID;
+import lombok.Builder;
 
 
+
+@Builder
 public class AuthenticatedUserDto {
-    private UUID id;
+    private int id;
     private String userName;
     private String email;
     private String userInterests;
     private String phoneNumber;
     //passwordı değiştir unutma şifreli tutulucak.
-    private String password;
-    private String token;
+    private String jwt;
 
 
 
-    public UUID getId() {
+
+    public int getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -55,19 +57,13 @@ public class AuthenticatedUserDto {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getPassword() {
-        return password;
-    }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     public String getToken() {
-        return token;
+        return jwt;
     }
 
-    public void setToken(String token) {
-        this.token = token;
+    public void setToken(String jwt) {
+        this.jwt = jwt;
     }
 }

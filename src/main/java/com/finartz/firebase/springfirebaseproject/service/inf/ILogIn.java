@@ -5,7 +5,7 @@ import com.finartz.firebase.springfirebaseproject.responses.LogInResponse;
 
 
 public interface ILogIn {
-    LogInResponse validateLoginRequest (LogInRequest logInRequest);
+    LogInResponse validateLoginRequest (LogInRequest logInRequest) throws Exception;
 
 
 }
